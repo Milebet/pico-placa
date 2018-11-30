@@ -1,52 +1,52 @@
 <div class="card text-center" style="width: 40rem; margin: 0 auto;">
   <div class="card-header">
-    <h1>Pico y Placa</h1>
+    <h1><%= I18n.t("views.title") %></h1>
   </div>
   <div class="card-body">
-    <h5 class="card-title"><strong>Conozca los horarios del pico y placa en Quito 2018</strong></h5>
-    <p class="card-text">El Horario pico y placa en Quito se debe cumplir para evitar el tráfico dentro de la ciudad durante horas determinadas y dentro del perímetro comprendido.</p>
-    <p>Es importante recordar que el pico y placa es una medida que regula el tránsito en el Distrito Metropolitano de Quito al prohibir que ciertos vehículos circulen en determinadas horas al día.</p>
+    <h5 class="card-title"><strong><%= I18n.t("views.content.card1.title") %></strong></h5>
+    <p class="card-text"><%= I18n.t("views.content.card1.p1") %></p>
+    <p><%= I18n.t("views.content.card1.p2") %></p>
   </div>
   <div class="card-body">
-  	<h5 class="card-title"><strong>Hora pico y placa Quito</strong></h5>
+  	<h5 class="card-title"><strong><%= I18n.t("views.content.card2.title") %></strong></h5>
   	<ul class="list-group list-group-flush">
-	  <li class="list-group-item">7:00 a las 9:30 en la mañana</li>
-	  <li class="list-group-item">16:00 a 19:30 en la tarde</li>
+	  <li class="list-group-item"><%= I18n.t("views.content.card2.p1") %></li>
+	  <li class="list-group-item"><%= I18n.t("views.content.card2.p2") %></li>
 	</ul>
   </div>
   <dir class="card-body">
   	<table class="table">
 	  <thead class="thead-dark">
 	    <tr>
-	      <th scope="col">Últimos Dígitos</th>
-	      <th scope="col">Día</th>
+	      <th scope="col"><%= I18n.t("views.content.table.row1.th1") %></th>
+	      <th scope="col"><%= I18n.t("views.content.table.row1.th2") %></th>
 	    </tr>
 	  </thead>
 	  <tbody>
 	    <tr>
-	      <th scope="row">1 y 2</th>
-	      <td>Lunes</td>
+	      <th scope="row"><%= I18n.t("views.content.table.row1.td1") %></th>
+	      <td><%= I18n.t("views.content.table.row1.td2") %></td>
 	    </tr>
 	    <tr>
-	      <th scope="row">2 y 4</th>
-	      <td>Martes</td>
+	      <th scope="row"><%= I18n.t("views.content.table.row2.td1") %></th>
+	      <td><%= I18n.t("views.content.table.row2.td2") %></td>
 	    </tr>
 	    <tr>
-	      <th scope="row">5 y 6</th>
-	      <td>Miercoles</td>
+	      <th scope="row"><%= I18n.t("views.content.table.row3.td1") %></th>
+	      <td><%= I18n.t("views.content.table.row3.td2") %></td>
 	    </tr>
 	    <tr>
-	      <th scope="row">7 y 8</th>
-	      <td>Jueves</td>
+	      <th scope="row"><%= I18n.t("views.content.table.row4.td1") %></th>
+	      <td><%= I18n.t("views.content.table.row4.td2") %></td>
 	    </tr>
 	    <tr>
-	      <th scope="row">9 y 0</th>
-	      <td>Viernes</td>
+	      <th scope="row"><%= I18n.t("views.content.table.row5.td1") %></th>
+	      <td><%= I18n.t("views.content.table.row5.td2") %></td>
 	    </tr>
 	  </tbody>
 	</table>
 	<br/>
-	<%=link_to  "Consultar Placa", new_validator_path, :class=> "btn btn-primary" %>
+	<%=link_to  I18n.t("views.nabvar.validate_license_plata"), new_validator_path, :class=> "btn btn-primary" %>
   </dir>
   <div class="card-footer text-muted">
   </div>

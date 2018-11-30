@@ -1,33 +1,48 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  hello: "Hola mundo"
+  views:
+    title: Peak and Plate
+    nabvar:
+      home: Hombe
+      validate_license_plata: Consult License Plate
+    content:
+      card1:
+        title: Know the schedules of the peak and plate in Quito 2018
+        p1: The peak Schedule and plaque in Quito must be complied with to avoid traffic within the city during certain hours and within the perimeter included.
+        p2: It is important to remember that the peak and plate is a measure that regulates traffic in the Metropolitan District of Quito by prohibiting certain vehicles from traveling at certain times of the day.
+      card2:
+        title: Peak hour and Quito plate
+        p1: 7:00 to 9:30 in the morning
+        p2: 4:00 p.m. to 7:30 p.m. in the afternoon
+      table:
+        row1:
+          th1: Last Digits
+          th2: Day
+          td1: 1 and 2
+          td2: Monday
+        row2:
+          td1: 3 and 4
+          td2: Tuesday
+        row3:
+          td1: 5 and 6
+          td2: Wednesday
+        row4:
+          td1: 7 and 8
+          td2: Thursday
+        row5:
+          td1: 9 and 0
+          td2: Friday
+    form:
+      title: Validate Lincence Plate
+      fields:
+        license_plate: Licence Plate
+        date: Date
+        hour: Hour
+        validate: Validate
+      hint:
+        license_plate: 'Enter your license plate number. Example: AU0-1234'
+  controllers:
+    messages:
+      invalid_plate: Invalid plate format
+      can_be_on_road: Can drive
+      can_not_be_on_road: By the time, you can not drive the vehicle

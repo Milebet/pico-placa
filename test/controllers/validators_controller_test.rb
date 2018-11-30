@@ -14,19 +14,19 @@ class ValidatorsControllerTest < ActionDispatch::IntegrationTest
 
   test "can see the welcome page" do 
     get "/"
-    assert_select "h1","Pico y Placa"
+    assert_select "h1", I18n.t("views.title")
   end
 
   test "The nabvar has two options Home and Verify placa" do 
     get "/"
-    assert_select "li","Inicio"
-    assert_select "li","Consultar Placa"
+    assert_select "li",I18n.t("views.nabvar.home")
+    assert_select "li",I18n.t("views.nabvar.validate_license_plata")
   end
 
   test 'validating title form placa' do
     # Visit the index page
     get new_validator_url
-    assert_select 'h1', 'Validar Placa'
+    assert_select 'h1', I18n.t("views.form.title")
   end
 
   test "Validating fields in form" do
@@ -49,7 +49,7 @@ class ValidatorsControllerTest < ActionDispatch::IntegrationTest
     post validators_validate_url, params: { validator: placa_attributes }
     assert_response :redirect
     follow_redirect!
-    assert_select "div.flash", "Puede conducir"
+    assert_select "div.flash", I18n.t("controllers.messages.can_be_on_road")
 
     placa_attributes = {
       placa: 'AEO-1230',
@@ -59,7 +59,7 @@ class ValidatorsControllerTest < ActionDispatch::IntegrationTest
     post validators_validate_url, params: { validator: placa_attributes }
     assert_response :redirect
     follow_redirect!
-    assert_select "div.flash", "Por la hora, usted no puede conducir el vehículo"
+    assert_select "div.flash", I18n.t("controllers.messages.can_not_be_on_road")
 
     placa_attributes = {
       placa: 'AE123098',
@@ -68,7 +68,7 @@ class ValidatorsControllerTest < ActionDispatch::IntegrationTest
     }
     post validators_validate_url, params: { validator: placa_attributes }
     assert_template :new
-    assert_select "div.flash", "Formato de placa invalido"
+    assert_select "div.flash", I18n.t("controllers.messages.invalid_plate")
 
     placa_attributes = {
       placa: 'AEO-1238',
@@ -78,6 +78,6 @@ class ValidatorsControllerTest < ActionDispatch::IntegrationTest
     post validators_validate_url, params: { validator: placa_attributes }
     assert_response :redirect
     follow_redirect!
-    assert_select "div.flash", "Puede conducir" 
+    assert_select "div.flash", I18n.t("controllers.messages.can_be_on_road")
   end
 end

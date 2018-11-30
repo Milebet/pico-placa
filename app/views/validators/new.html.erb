@@ -1,28 +1,28 @@
 <dir class="content" style="width: 30rem; margin: 0 auto;">
 	<div class="col-md-12">
-		<h1 class="text-center">Validar Placa</h1>
+		<h1 class="text-center"><%= I18n.t("views.form.title") %></h1>
 
 		<%= form_for @validator, :url => { :action => "validate" }, :html => { :class => " form-horizontal center", :method => "post" } do |f| %>
 
 			<div class="form-group">
-				<%= f.label :placa, "Placa:", class: "col-md-4 control-label" %>
+				<%= f.label :placa, "#{I18n.t("views.form.fields.license_plate")}:", class: "col-md-4 control-label" %>
 				<div class="col-md-12">
-				  <%= f.text_field :placa, class: "form-control", required: true, :maxlength => 8, :placeholder => "Ingrese su número de placa. Ejemplo: AU0-1234"%>
+				  <%= f.text_field :placa, class: "form-control", required: true, :maxlength => 8, :placeholder => I18n.t("views.form.hint.license_plate")%>
 				</div>
 			</div>
 			<div class="form-group">
-				<%= f.label :date, "Fecha:", class: "col-md-4 control-label" %>
+				<%= f.label :date, "#{I18n.t("views.form.fields.date")}:", class: "col-md-4 control-label" %>
 				<div class="col-md-12">
 				  <%= f.date_field :date, class: "form-control", required: true %>
 				</div>
 			</div>
 			<div class="form-group">
-				<%= f.label :time, "Hora:", class: "col-md-4 control-label" %>
+				<%= f.label :time, "#{I18n.t("views.form.fields.hour")}:", class: "col-md-4 control-label" %>
 				<div class="col-md-12">
 				  <%= f.time_field :time, class: "form-control", required: true %>
 				</div>
 			</div>
-		  <%= f.submit "Submit", class: "btn btn-default btn-primary" %>  
+		  <%= f.submit "#{I18n.t("views.form.fields.validate")}", class: "btn btn-default btn-primary" %>  
 		<% end %>
 	</div>
 </dir>

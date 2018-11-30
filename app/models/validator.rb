@@ -13,9 +13,9 @@ class Validator < ApplicationRecord
  INIT_MORNING = Time.parse("07:00")
  END_MORNING = Time.parse("09:30")
  INIT_NIGHT = Time.parse("16:00")
- END_NIGHT = Time.parse("17:30")
+ END_NIGHT = Time.parse("19:30")
  
- PERIOD_TIME = [["07:00","09:30"], ["16:00","17:30"]]
+ PERIOD_TIME = [["07:00","09:30"], ["16:00","19:30"]]
 
  validates :placa, :date, :time, :presence => true
 
